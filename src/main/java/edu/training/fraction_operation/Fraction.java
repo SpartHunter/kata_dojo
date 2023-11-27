@@ -46,7 +46,7 @@ public class Fraction {
         }
     }
 
-    public void showFraction(){
+    public void showFractionOrResultOfItsDivision (){
         if((this.getNumerator() % this.getDenominator()) == 0) {
             System.out.println( this.getNumerator() / this.getDenominator() );
         } else {

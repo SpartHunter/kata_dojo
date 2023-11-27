@@ -30,10 +30,10 @@ public class Main {
         int operation = Integer.parseInt( reader.readLine() );
 
         switch( operation ) {
-            case 1 -> { System.out.print( "the result for addition of " + firstFraction + " and " + secondFraction + " is : "); firstFraction.add( secondFraction ).showFraction(); }
-            case 2 -> { System.out.print( "the result for subtraction " + firstFraction + " and " + secondFraction + " is : " ); firstFraction.subtract( secondFraction ).showFraction(); }
-            case 3 -> { System.out.print( "the result for multiplication " + firstFraction + " and " + secondFraction + " is : " ); firstFraction.multiply( secondFraction ).showFraction(); }
-            case 4 -> { System.out.print( "the result for division " + firstFraction + " and " + secondFraction + " is : " ); firstFraction.divide( secondFraction ).showFraction(); }
+            case 1 -> { System.out.print( "the result for addition of " + firstFraction + " and " + secondFraction + " is : "); firstFraction.add( secondFraction ).showFractionOrResultOfItsDivision(); }
+            case 2 -> { System.out.print( "the result for subtraction " + firstFraction + " and " + secondFraction + " is : " ); firstFraction.subtract( secondFraction ).showFractionOrResultOfItsDivision(); }
+            case 3 -> { System.out.print( "the result for multiplication " + firstFraction + " and " + secondFraction + " is : " ); firstFraction.multiply( secondFraction ).showFractionOrResultOfItsDivision(); }
+            case 4 -> { System.out.print( "the result for division " + firstFraction + " and " + secondFraction + " is : " ); firstFraction.divide( secondFraction ).showFractionOrResultOfItsDivision(); }
             default -> System.out.println("operation not valid");
         }
     }

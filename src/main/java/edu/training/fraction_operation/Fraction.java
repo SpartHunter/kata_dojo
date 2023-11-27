@@ -46,7 +46,7 @@ public class Fraction {
         }
     }
 
-    private void showFraction(){
+    public void showFraction(){
         if((this.getNumerator() % this.getDenominator()) == 0) {
             System.out.println( this.getNumerator() / this.getDenominator() );
         } else {
@@ -54,29 +54,33 @@ public class Fraction {
         }
     }
 
-    public void add ( Fraction fraction ) {
+    public Fraction add ( Fraction fraction ) {
         Fraction additionResult = new Fraction( ( ( this.getNumerator() * fraction.getDenominator() ) + ( fraction.getNumerator() * this.getDenominator() ) ),
                                                 ( this.getDenominator() * fraction.getDenominator() ) );
 
-        additionResult.simplifyFraction( additionResult.pgcdOfFraction() ).showFraction();
+        return additionResult.simplifyFraction( additionResult.pgcdOfFraction() );
     }
 
-    public void  subtract ( Fraction fraction ) {
+    public Fraction  subtract ( Fraction fraction ) {
         Fraction subtractionResult = new Fraction( ( ( this.getNumerator() * fraction.getDenominator() ) - ( fraction.getNumerator() * this.getDenominator() ) ),
                                                 ( this.getDenominator() * fraction.getDenominator() ) );
 
-        subtractionResult.simplifyFraction( subtractionResult.pgcdOfFraction() ).showFraction();
+        return subtractionResult.simplifyFraction( subtractionResult.pgcdOfFraction() );
     }
 
-    public void  multiply ( Fraction fraction ) {
+    public Fraction  multiply ( Fraction fraction ) {
         Fraction multiplicationResult = new Fraction( ( this.getNumerator() * fraction.getNumerator()), (this.getDenominator() * fraction.getDenominator()));
 
-        multiplicationResult.simplifyFraction( multiplicationResult.pgcdOfFraction()).showFraction();
+        return multiplicationResult.simplifyFraction( multiplicationResult.pgcdOfFraction());
     }
 
-    public void  divide ( Fraction fraction ) {
+    public Fraction  divide ( Fraction fraction ) {
         Fraction divisionResult = new Fraction( ( this.getNumerator() * fraction.getDenominator() ), ( this.getDenominator() * fraction.getNumerator() ) );
 
-        divisionResult.simplifyFraction( divisionResult.pgcdOfFraction() ).showFraction();
+        return divisionResult.simplifyFraction( divisionResult.pgcdOfFraction() );
+    }
+
+    public String toString() {
+        return this.getNumerator() + "/" + this.getDenominator();
     }
 }

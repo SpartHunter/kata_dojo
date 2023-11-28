@@ -3,7 +3,6 @@ package edu.training.send_birthday_email;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import edu.training.Main;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -73,7 +72,7 @@ public class SendMailService {
     }
 
     private JsonObject convertFileToJson() {
-        File properties = new File( Objects.requireNonNull( Main.class.getClassLoader().getResource( "properties.json" ) ).getPath() );
+        File properties = new File( Objects.requireNonNull( this.getClass().getClassLoader().getResource( "properties.json" ) ).getPath() );
 
         try {
             JsonElement jsonElement = JsonParser.parseReader( new FileReader( properties ) );

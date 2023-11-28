@@ -1,23 +1,30 @@
 package edu.training;
 
-import edu.training.send_birthday_email.Contact;
-import edu.training.send_birthday_email.CsvRepository;
-import edu.training.send_birthday_email.Repository;
+import edu.training.fraction_operation.FractionMain;
+import edu.training.send_birthday_email.BirthdayGreetingMain;
 
-import java.io.File;
-import java.util.List;
-import java.util.Objects;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-    public static void main ( String[] args ) {
+    public static void main ( String[] args ) throws IOException {
+        BufferedReader reader = new BufferedReader( new InputStreamReader( System.in ) );
 
-        Repository csvrepository = new CsvRepository( new File( Objects.requireNonNull( Main.class.getClassLoader().getResource( "contacts_data.csv" ) )
-                                                                       .getPath()), "," );
+        System.out.println("*** list of available scenarios ***");
 
-        List<Contact> allContact = csvrepository.findAllContact();
+        System.out.println("1) Calculation on fractions ");
+        System.out.println("2) Birthday greeting ");
 
-        for( Contact contact : allContact ) {
-            System.out.println( "contact = " + contact );
+        System.out.println("Enter number of scenario you want to play : ");
+        int numberOfScenarioToPlay = Integer.parseInt( reader.readLine() );
+
+        if(numberOfScenarioToPlay == 1) {
+            new FractionMain().runScenario();
+        } else if (numberOfScenarioToPlay == 2) {
+            new BirthdayGreetingMain().runScenario();
+        } else {
+            System.out.println("The number of scenario you enter is not valide ! ...... Bye");
         }
     }
 }

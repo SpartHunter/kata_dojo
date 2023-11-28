@@ -3,32 +3,32 @@ package edu.training.send_birthday_email;
 import java.time.LocalDate;
 
 public class Contact {
-    private String LastName;
-    private String FirstName;
+    private String lastname;
+    private String firstname;
     private LocalDate birthday;
     private String email;
 
-    public Contact ( String lastName, String firstName, LocalDate birthday, String email ) {
-        LastName = lastName;
-        FirstName = firstName;
+    public Contact ( String lastname, String firstname, LocalDate birthday, String email ) {
+        this.lastname = lastname;
+        this.firstname = firstname;
         this.birthday = birthday;
         this.email = email;
     }
 
-    public String getLastName () {
-        return LastName;
+    public String getLastname () {
+        return lastname;
     }
 
-    public void setLastName ( String lastName ) {
-        LastName = lastName;
+    public void setLastname ( String lastname ) {
+        this.lastname = lastname;
     }
 
-    public String getFirstName () {
-        return FirstName;
+    public String getFirstname () {
+        return firstname;
     }
 
-    public void setFirstName ( String firstName ) {
-        FirstName = firstName;
+    public void setFirstname ( String firstname ) {
+        this.firstname = firstname;
     }
 
     public LocalDate getBirthday () {
@@ -45,5 +45,9 @@ public class Contact {
 
     public void setEmail ( String email ) {
         this.email = email;
+    }
+
+    public String toString () {
+        return this.getLastname() + ", " + this.getFirstname() + ", " + this.getBirthday() + ", " + this.getEmail();
     }
 }
